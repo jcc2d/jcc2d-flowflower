@@ -4,8 +4,6 @@
 
 ### 用法
 
-使用非常简单。
-
 ```js
 var flowers = {
   assets: {
@@ -46,6 +44,8 @@ document.onclick = function() {
   });
 }
 ```
+
+[view-demo](https://jcc2d.github.io/jcc2d-flowflower/examples/)
 
 ## 完整配置
 

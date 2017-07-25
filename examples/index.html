@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <title>JC_demo</title>
+  <link href="https://fonts.googleapis.com/css?family=Plaster" rel="stylesheet">
+  <style type="text/css">
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    html {
+      height: 100%;
+    }
+    body {
+      height: 100%;
+      font-family: 'Plaster', cursive;
+      overflow: hidden;
+      text-align: center;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background: -webkit-radial-gradient(center, circle cover, #43517b 0%, #060a1d 100%);
+    }
+    .title {
+      font-size: 20px;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    #flyflower-stage {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 400px;
+      height: 450px;
+      margin: -225px 0 0 -200px;
+    }
+
+  </style>
+</head>
+<body>
+  <p class="title">click anywhere</p>
+  <canvas id="flyflower-stage" width="800" height="900"></canvas>
+  <script type="text/javascript" src="https://jasonchen1982.github.io/jcc2d/build/jcc2d.js"></script>
+  <script type="text/javascript" src="../build/index.js"></script>
+  <script type="text/javascript">
+    var flowers = {
+      assets: {
+        great: './images/emoji/great.png',
+        heart: './images/emoji/heart.png',
+        kiss: './images/emoji/kiss.png',
+        smile: './images/emoji/smile.png',
+        star: './images/emoji/star.png',
+      },
+      begin: {
+        x: 0,
+        y: -160,
+        width: 640,
+        height: 200
+      },
+      end: {
+        x: 0,
+        y: 780,
+        width: 640,
+        height: 20
+      },
+    };
+    var w = 800;
+    var h = 900;
+    var flyflower = new JC.Flowflower({
+      stage: {
+        dom: 'flyflower-stage',
+        width: w,
+        height: h,
+      },
+      flowers: flowers,
+    });
+    flyflower.start();
+    document.onclick = function() {
+      flyflower.fallFlowers({
+        flowers: [ 'great', 'heart', 'kiss', 'smile', 'star' ],
+        flux: 20,
+      });
+    }
+  </script>
+</body>
+</html>

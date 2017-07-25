@@ -1,6 +1,6 @@
 {
   "name": "jcc2d-flowflower",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "jcc2d flowflower flowemoji emoji",
   "main": "build/index.js",
   "scripts": {
